@@ -79,16 +79,16 @@ For this project, complete FARS data for **2020, 2021, 2022, and 2023** were dow
 ### Data Hierarchy & Relationships
 
 FARS tables follow a hierarchical structure with join keys:
-Crash (STATE + ST_CASE)
-├── Vehicle (STATE + ST_CASE + VEH_NO)
-│ ├── Person (STATE + ST_CASE + VEH_NO + PER_NO)
-│ │ ├── Race (STATE + ST_CASE + VEH_NO + PER_NO)
-│ │ ├── Drugs (STATE + ST_CASE + VEH_NO + PER_NO)
-│ │ └── Safety Equipment (STATE + ST_CASE + VEH_NO + PER_NO)
-│ ├── Damage (STATE + ST_CASE + VEH_NO)
-│ └── Driver-Related Factors (STATE + ST_CASE + VEH_NO)
-├── Crash-Related Factors (STATE + ST_CASE)
-└── Weather (STATE + ST_CASE)
+- Crash (STATE + ST_CASE)
+   - Vehicle (STATE + ST_CASE + VEH_NO)
+      - Person (STATE + ST_CASE + VEH_NO + PER_NO)
+         - Race (STATE + ST_CASE + VEH_NO + PER_NO)
+         - Drugs (STATE + ST_CASE + VEH_NO + PER_NO)
+         - Safety Equipment (STATE + ST_CASE + VEH_NO + PER_NO)
+      - Damage (STATE + ST_CASE + VEH_NO)
+      - Driver-Related Factors (STATE + ST_CASE + VEH_NO)
+   - Crash-Related Factors (STATE + ST_CASE)
+   - Weather (STATE + ST_CASE)
 
 
 ---
@@ -251,38 +251,6 @@ Constructed analysis-ready indicators from cleaned variables:
 
 ## File Organization
 
-### Directory Structure
-project_folder/
-├── Master Data/
-│ ├── accident_master_2020_2023.csv
-│ ├── vehicle_master_2020_2023.csv
-│ ├── person_master_2020_2023.csv
-│ ├── drugs_master_2020_2023.csv
-│ ├── damage_master_2020_2023.csv
-│ ├── driverrf_master_2020_2023.csv
-│ ├── weather_master_2020_2023.csv
-│ ├── race_master_2020_2023.csv
-│ ├── safetyeq_master_2020_2023.csv
-│ └── crashrf_master_2020_2023.csv
-│
-├── cleaned/
-│ ├── accident_clean_2020_2023.csv
-│ ├── vehicle_clean_2020_2023.csv
-│ ├── person_clean_2020_2023.csv
-│ ├── drugs_clean_2020_2023.csv
-│ ├── damage_clean_2020_2023.csv
-│ ├── driverrf_clean_2020_2023.csv
-│ ├── weather_clean_2020_2023.csv
-│ ├── race_clean_2020_2023.csv
-│ ├── safetyeq_clean_2020_2023.csv
-│ └── crashrf_clean_2020_2023.csv
-│
-├── scripts/
-│ ├── 01_vertical_merge.R (merge 2020–2023 files)
-│ ├── 02_clean_fars.R (recode missing values, create derived variables)
-│ └── 03_horizontal_merge.R (join tables for analysis datasets)
-│
-└── README.md
 
 
 ### Data Flow
