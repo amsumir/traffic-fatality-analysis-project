@@ -1,1 +1,1 @@
-# traffic-fatality-analysis-project
+# Traffic Fatality Analysis Project
